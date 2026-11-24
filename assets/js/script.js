@@ -1,3 +1,4 @@
+
 const btnPlay = document.querySelector('#button .mulai')
 const messege = document.querySelector('.messege-box')
 const messege1 = document.querySelector('.messege-box1')
@@ -16,6 +17,10 @@ const body = document.querySelector('.body')
 const audio = document.querySelector('.audio')
 
 body.classList.add('background1')
+
+// ================================
+// WAKTU
+// ================================
 
 const date = new Date()
 const hour = String(date.getHours()).padStart(2, '0')
@@ -79,7 +84,6 @@ hilang1.addEventListener('click', () => {
   hilang1.style.display = "none"
   hilang2.style.display = "block"
 
-
   Swal.fire({
     imageUrl: "/assets/img/stiker_mylove.gif",
     imageHeight: 120,
@@ -87,10 +91,10 @@ hilang1.addEventListener('click', () => {
     title: 'Tulis nama kamu di sini sayangg',
 
     html: `
-      <input 
-        type="text" 
-        id="login" 
-        class="swal2-input" 
+      <input
+        type="text"
+        id="login"
+        class="swal2-input"
         placeholder="Nama Kamu"
       >
     `,
@@ -105,10 +109,11 @@ hilang1.addEventListener('click', () => {
         .querySelector('#login')
         .value
 
-      if (!login) {
+      if (!login.trim()) {
         Swal.showValidationMessage(
           `Masukin nama kamu sayanggg :(`
         )
+        return false
       }
 
       return {
@@ -118,7 +123,6 @@ hilang1.addEventListener('click', () => {
 
   }).then((result) => {
 
-    // Pastikan user benar-benar memasukkan nama
     if (!result.value || !result.value.login) {
       return
     }
@@ -132,6 +136,8 @@ hilang1.addEventListener('click', () => {
 
     const txt = `Halo, ${result.value.login} sayang. ${pesan}`
 
+    // Kosongkan pesan sebelumnya
+    messege2P.textContent = ''
 
     // ================================
     // TYPEWRITER
@@ -141,7 +147,7 @@ hilang1.addEventListener('click', () => {
 
       if (i < txt.length) {
 
-        messege2P.innerHTML += txt.charAt(i)
+        messege2P.textContent += txt.charAt(i)
 
         i++
 
