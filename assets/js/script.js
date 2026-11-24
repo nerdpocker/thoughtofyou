@@ -33,9 +33,11 @@ jam.innerHTML = `${hour}:${minutes}`
 // ISI PESAN
 // ================================
 
-const pengirim = "Bucin Stuff"
+const pengirim = "you're girlfriend (soon)"
 
-const pesan = `Happy mensive, my love. Another month of us, another month of loving you, choosing you, and making little memories together. Thank you for being by my side, for all the laughs, the random moments, and even the little things that make having you in my life so special. I’m so grateful for you, and I hope we get to celebrate many, many more months together. I love you more than words can ever explain, and I’ll keep choosing you, today and always. 🫶🏻`
+const pesan = `good morning, my favorite person. i hope you woke up feeling well today. i just wanted to remind you that you're always somewhere in my thoughts, even in the simplest moments of my day. i hope today treats you gently, gives you plenty of reasons to smile, and brings you nothing but good things. don't forget to take care of yourself, eat properly, and never push yourself too hard, okay? have a lovely day, love. i'm always rooting for you. ♡
+
+I love you more than u know dear 🤍`
 
 
 if (pengirim) {
